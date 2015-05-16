@@ -1,0 +1,139 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:id="@+id/top">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:textSize="25sp"
+            android:id="@+id/caption" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:numStars="5"
+            android:paddingBottom="8dp"
+            android:paddingTop="5dp"
+            android:id="@+id/ratingBar"
+            android:isIndicator="true"
+            android:clickable="true"
+            style="?android:attr/ratingBarStyleIndicator" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top"
+        android:id="@+id/scrollView"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:id="@+id/linearLayout"
+            android:layout_below="@+id/txtCaption">
+            <TabHost
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tabHost"
+                android:layout_below="@+id/linearLayout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></TabWidget>
+
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/informationTab"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_margin="10dp">
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/commentTab"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <ImageButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_weight="1"
+                                    android:scaleType="fitCenter"
+                                    android:id="@+id/addcomm"
+                                    android:src="@drawable/object_layout_addcomm_btn" />
+
+                                <ImageButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_weight="1"
+                                    android:scaleType="fitCenter"
+                                    android:id="@+id/editcomm"
+                                    android:src="@drawable/object_layout_edit_comm_btn" />
+
+                                <ImageButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_weight="1"
+                                    android:scaleType="fitCenter"
+                                    android:id="@+id/deletecomm"
+                                    android:src="@drawable/object_layout_deletecomm_btn" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:id="@+id/userComment">
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:id="@+id/comments">
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/imageTab"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </TabHost>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
